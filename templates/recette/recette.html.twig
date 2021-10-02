@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ recette.name }}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1> {{ recette.name }}</h1>
+
+    <div class="row">
+        <div class="col-6">
+            <img src="/uploads/{{recette.illustration}}" alt="{{ recette.name }}" class="img-fluid">
+        </div>
+        <div class="col-6">
+            <h4> Nombre de personnes </h4>
+            <p>{{recette.nbrperson}} </p>
+ 
+            <h4> Temps (min) </h4>
+            <p>{{recette.time}} </p>
+
+            <h4> Ingrédients </h4>
+            <p>{{recette.ingredients}} </p>
+
+            <h4> Préparation </h4>
+            <p>{{recette.preparation}} </p>
+        </div>
+    </div>
+
+
+ 
+</div>
+{% endblock %}

@@ -1,19 +1,82 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+    <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Font google-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+        <!--Jquery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!--Bootstrap icones-->
+        <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+        />
+        <link rel="shortcut icon" href="{{ asset('assets/images/logo.png')}}" type="image/x-icon" />
+        <link rel="stylesheet" href="style.css" />
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
+        <!--Bootstrap-->
+        <link
+                href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+                rel="stylesheet"
+                integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+                crossorigin="anonymous"
+        />
+        <!--Style de base-->
+         <link href="{{ asset('assets/css/base.css') }}" rel="stylesheet">
+        <!--Style de accueil-->
+         <link href="{{ asset('assets/css/accueil.css') }}" rel="stylesheet">
+   
+
+        <title>{% block title %}Nutripim's{% endblock%}</title>
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex- justify-content-between">
+            <a class="navbar-brand ms-5 bold" href="{{ path('accueil')}}"> NUTRITION</a>
+            <button class="navbar-toggler me-5" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item fs-5">
+                        <a class="nav-link" href="{{ path('accueil')}}">Accueil</a>
+                    </li>
+                    <li class="nav-item fs-5">
+                        <a  class="nav-link">Conseils diététique</a>
+                    </li>
+                    <li class="nav-item fs-5">
+                        <a class="nav-link" href="{{ path('recettes')}}">Recettes</a> 
+                    </li>
+                    
+                    {% if app.user %}
+                    <li class="nav-item fs-5">
+                        <a href="{{ path('app_logout')}}"class="nav-link bg-secondary rounded text-light" > Deconnexion</a> 
+                    </li>
+                    <li class="nav-item">
+                    <a href="{{ path('account')}}"class="nav-link" ><i class="bi bi-person-fill fs-3 btn-danger me-2 rounded"></i> <small>({{app.user.firstname}})</small></a>
+                    </li>
+                    {% else %}
+                     <li class="nav-item fs-5">
+                        <a class="nav-link bg-secondary rounded text-light" href="{{ path('app_login')}}" > Connexion </a>   
+                    </li>
+                     <li class="nav-item fs-5">
+                        <a href="{{ path('register')}}"class="nav-link bg-secondary rounded text-light ms-3 me-3" > Inscription</a> 
+                    </li>
+                    {% endif %}
+
+                </ul>
+            </div>
+        </nav>
+        {% block content %}{% endblock %}
+           <footer class="fixed-bottom text-center pt-3">
+            Coopyright 2021 Nutrition
+        </footer>
     </body>
+          <!--Bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>

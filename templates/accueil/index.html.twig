@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <div class=" container-fluid container-accueil">
+        <div class="row h-100">
+            <div class=" titreh2 col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center">
+                <div class="d-flex justify-content-center align-items-center">
+                    <h2 class=" text-center">Un esprit sain dans un corps sain.</h2>
+                </div>
+            <div class="mt-5">    
+                <button type="button" class="btn btn-secondary">
+                    <a class="text-light" href="{{ path('register')}}">S'inscire</a>
+                </button>
+                </div>
+            </div>    
+            <div class="col-12  col-lg-6 d-flex justify-content-center ">
+                <div class='block-blanc d-flex justify-content-center bg-light'>
+                    <p class="p-3 align-self-center text-justify ">Lorem ipsum dolor sit amet, consectetur adipiscing elo mi tortor sollicitudin consequat commodo ac tempus vulputate. Nascetur viverra at orci neque, sit consectetur quam purus.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

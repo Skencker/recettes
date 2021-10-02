@@ -1,0 +1,48 @@
+h2 {
+    text-transform: capitalize;
+    color: var(--gris-fonce);
+    font-weight: 900;
+    width: 50%;
+    font-size: 50px;
+    font-family: "Racing Sans One", cursive;
+    margin-bottom: 100px;
+  }
+  
+  .container-accueil {
+    background-image: url("../../../assets/images/bg-accueil.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 88vh;
+    margin-top: -8px;
+  }
+  
+  .block-blanc {
+    background-color: var(--blanc);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 200px;
+    width: 400px;
+    margin-top: 200px;
+  }
+  
+  @media screen and (max-width: 990px) {
+      .container-accueil {
+          background-image: url("../../../assets/images/bg-table-accueil.png");
+      } 
+      h2 {
+        font-size: 40px;
+        margin-top: 0;
+        margin-bottom: 0px;
+      }
+  }
+  
+  @media screen and (max-width: 380px){
+    .container-accueil {
+      background-image: url("../../../assets/images/bg-mobile-accueil.png");
+    }
+    h2 {
+      font-size: 25px;
+      margin-top: 0;
+    } 
+  }
+  
